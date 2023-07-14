@@ -9,27 +9,30 @@ class Animal
         @nome = nome
         @idade = idade
     end
+    def quem_sou
+        puts "Sou #{@nome}, tenho #{@idade} anos."
+    end
 end
 
 class Cachorro < Animal
     def initialize(nome, idade, raca)
-        @nome = nome
-        @idade = idade
+        super(nome, idade)
         @raca = raca
     end
     def quem_sou
-        puts "Sou #{@nome}, sou da raça #{@raca} e tenho #{@idade} anos."
+        super
+        puts "Sou da raça: #{@raca}."
     end
 end
 
 class Gato < Animal
     def initialize(nome, idade, cor)
-        @nome = nome
-        @idade = idade
+        super(nome, idade)
         @cor = cor
     end
     def quem_sou
-        puts "Sou #{@nome}, minha cor é #{@cor.downcase} e tenho #{@idade} anos."
+        super
+        puts "Sou da cor:#{@cor}." 
     end
 end
 
